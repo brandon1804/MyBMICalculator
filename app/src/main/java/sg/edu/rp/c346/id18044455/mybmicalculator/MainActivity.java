@@ -89,24 +89,18 @@ public class MainActivity extends AppCompatActivity {
         String pD = tvLCD.getText().toString();
         String pBMI = tvLCB.getText().toString();
         SharedPreferences prefsD = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences prefsB = PreferenceManager.getDefaultSharedPreferences(this);
 
         SharedPreferences.Editor prefsDEdit = prefsD.edit();
-        SharedPreferences.Editor prefsBEdit = prefsB.edit();
 
         prefsDEdit.putString("date", pD);
-        prefsBEdit.putString("bmi", pBMI);
+        prefsDEdit.putString("bmi", pBMI);
 
         prefsDEdit.commit();
-        prefsBEdit.commit();
 
         if(clicked == true){
             prefsDEdit.clear();
-            prefsBEdit.clear();
             prefsDEdit.commit();
-            prefsBEdit.commit();
         }
-
     }
 
     @Override
@@ -116,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefsB = PreferenceManager.getDefaultSharedPreferences(this);
 
         String pDMSG = prefsD.getString("date", getString(R.string.LCD));
-        String bMSG = prefsB.getString("bmi",  getString(R.string.LCBMI));
+        String bMSG = prefsD.getString("bmi",  getString(R.string.LCBMI));
         tvLCD.setText(pDMSG);
         tvLCB.setText(bMSG);
     }
