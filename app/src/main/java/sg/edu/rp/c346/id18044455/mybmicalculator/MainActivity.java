@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     tvO.setText(R.string.Obese);
                 }
+                wT.setText("");
+                hT.setText("");
             }
         });
 
