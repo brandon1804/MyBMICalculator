@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 (now.get(Calendar.MONTH)+1) + "/" +
                 now.get(Calendar.YEAR) + " " +
                 now.get(Calendar.HOUR_OF_DAY) + ":" +
-                now.get(Calendar.MINUTE);
+                String.format("%02d", now.get(Calendar.MINUTE));
 
 
         btnC.setOnClickListener(new View.OnClickListener() {
